@@ -10,7 +10,7 @@ const CalculateBMI = () => {
             weight
         }
         // console.log(payload);
-        fetch("http://localhost:8000/calculateBMI",{
+        fetch("https://bmi-calculator-l51l.onrender.com/calculateBMI",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

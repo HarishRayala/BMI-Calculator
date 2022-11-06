@@ -10,7 +10,7 @@ const Login = () => {
             password
         }
         // console.log(payload);
-        fetch("http://localhost:8000/login",{
+        fetch("https://bmi-calculator-l51l.onrender.com/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

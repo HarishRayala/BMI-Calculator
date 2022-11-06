@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Link to="/"><button>Go Back to Home</button> </Link>
+      <Link to="/"><button style={{height:"25px"}}>Go Back to Home</button> </Link>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path="/signup" element={<Signup/>}/>

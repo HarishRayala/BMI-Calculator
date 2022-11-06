@@ -12,7 +12,7 @@ const Signup = () => {
             password
         }
         // console.log(payload);
-        fetch("http://localhost:8000/signup",{
+        fetch("https://bmi-calculator-l51l.onrender.com/signup",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
