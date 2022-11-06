@@ -42,6 +42,18 @@ app.post("/signup",async(req,res)=>{
     }
 })
 
+app.put("/:id",async(req,res)=>{
+    const {id}=req.params
+    const data=await UserModel.updateOne({_id:id},req.body);
+    res.send(data)
+})
+
+app.delete("/:id",authentication,async(req,res)=>{
+    const {id}=req.params;
+    await UserModel.deleteOne({_id:id});
+    res.send("Deleted Successfully")
+})
+
 app.post("/login",async (req,res)=>{
     const {email,password}=req.body;
     const user=await UserModel.findOne({email})
