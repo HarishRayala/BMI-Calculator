@@ -48,7 +48,7 @@ app.put("/:id",async(req,res)=>{
     res.send(data)
 })
 
-app.delete("/:id",authentication,async(req,res)=>{
+app.delete("/:id",async(req,res)=>{
     const {id}=req.params;
     await UserModel.deleteOne({_id:id});
     res.send("Deleted Successfully")
