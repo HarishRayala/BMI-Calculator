@@ -1,12 +1,18 @@
 const { WomenModel } = require("../Model/Women.model");
 
 const getWomenData=async(req,res)=>{
-    const menData=await WomenModel.find();
-    res.send(menData)
+    const womenData=await WomenModel.find();
+    res.send(womenData)
 }
 const getBrand=async(req,res)=>{
     const brandData=await WomenModel.find({brand:req.params.brand});
     res.send(brandData)
+}
+
+const filterdata=async(req,res)=>{
+    const {brand,color,categories,price}=req.query
+    const filterData=await WomenModel.find({$or:[{brand},{color},{categories},{price}]});
+    res.send(filterData)
 }
 
 const postWomensData=async(req,res)=>{
@@ -23,6 +29,7 @@ const postWomensData=async(req,res)=>{
 
 const WomensDataController={
     getWomenData,
+    filterdata,
     getBrand,
     postWomensData
 }

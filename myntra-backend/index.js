@@ -18,11 +18,11 @@ app.post("/signup",async(req,res)=>{
     const {name,email,password,gender,mobile}=req.body;
     const isUser=await UsersModel.findOne({email})
     if(isUser){
-        res.send("User already Exist Try login ")
+        res.send("User already Exist Try to login")
     }
     bcrypt.hash(password,4,async function(err,hash){
         if(err){
-            res.send("something Went wrong")
+            res.send("Something Went wrong")
         }
         const newUser=new UsersModel({
             name,
@@ -53,7 +53,7 @@ app.post("/login",async(req,res)=>{
         }
         if(result){
             const token=jwt.sign({user_id},process.env.SECRET_KEY);
-            res.send({message:"Login Successfull",token})
+            res.send({"msg":"Login Successfull",token})
         }else{
             res.send({"msg":"Login Failed"})
         }

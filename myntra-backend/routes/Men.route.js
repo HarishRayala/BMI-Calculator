@@ -6,7 +6,9 @@ menRouter.use(express.json());
 
 menRouter.get("/mensdata",MensDataController.getMenData);
 
-menRouter.get("/mensdata/:brand",MensDataController.getBrand);
+menRouter.get("/menspage",MensDataController.filterdata);
+
+// menRouter.get("/mens",MensDataController.getColor);
 
 menRouter.post("/create",MensDataController.postMensData);
 
