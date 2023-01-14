@@ -8,8 +8,6 @@ menRouter.get("/mensdata",MensDataController.getMenData);
 
 menRouter.get("/menspage",MensDataController.filterdata);
 
-// menRouter.get("/mens",MensDataController.getColor);
-
 menRouter.post("/create",MensDataController.postMensData);
 
 module.exports={menRouter}
